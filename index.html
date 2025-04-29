@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoring System</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#6366F1',
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-primary">MentorConnect</span>
+                    </div>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center">
+                    <a href="#features" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium">How it Works</a>
+                    <a href="login.html" class="ml-4 px-4 py-2 rounded-md text-sm font-medium text-white bg-primary hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        Login
+                    </a>
+                    <a href="register.html" class="ml-2 px-4 py-2 rounded-md text-sm font-medium text-primary border border-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        Register
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">How it Works</a>
+                <a href="login.html" class="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Login</a>
+                <a href="register.html" class="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-32 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Transform Your Learning Journey</span>
+                    <span class="block text-primary">With Expert Mentorship</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Connect with experienced mentors, schedule personalized sessions, and accelerate your growth in your chosen field.
+                </p>
+                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                    <div class="rounded-md shadow">
+                            <a href="register.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-600 md:py-4 md:text-lg md:px-10">
+                                Get Started
+                            </a>
+                    </div>
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                            <a href="#features" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Features that empower your learning
+                </h2>
+                <p class="mt-4 text-lg text-gray-500">
+                    Everything you need to connect with mentors and accelerate your growth.
+                </p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-primary rounded-md shadow-lg">
+                                        <i class="fas fa-users text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Expert Mentors</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Connect with experienced professionals who are passionate about sharing their knowledge.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-primary rounded-md shadow-lg">
+                                        <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Flexible Scheduling</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Book sessions at your convenience with our easy-to-use scheduling system.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-primary rounded-md shadow-lg">
+                                        <i class="fas fa-star text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Feedback System</h3>
+                                <p class="mt-5 text-base text-gray-500">
+                                    Provide and receive feedback to ensure continuous improvement in your learning journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    How It Works
+                </h2>
+                <p class="mt-4 text-lg text-gray-500">
+                    Get started with MentorConnect in three simple steps
+                </p>
+            </div>
+
+            <div class="mt-20">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-2xl mx-auto">
+                            1
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">Create Your Profile</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Sign up and create your profile as either a mentor or mentee
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-2xl mx-auto">
+                            2
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">Find Your Match</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Browse through profiles and find the perfect mentor for your goals
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-white text-2xl mx-auto">
+                            3
+                        </div>
+                        <h3 class="mt-6 text-lg font-medium text-gray-900">Start Learning</h3>
+                        <p class="mt-2 text-base text-gray-500">
+                            Schedule sessions and begin your mentorship journey
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <span class="text-2xl font-bold text-primary">MentorConnect</span>
+                    <p class="mt-4 text-gray-500">
+                        Empowering learning through meaningful mentorship connections.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Quick Links</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">About Us</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Features</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Support</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a></li>
+                        <li><a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    © 2024 MentorConnect. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
