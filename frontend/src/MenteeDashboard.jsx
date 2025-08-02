@@ -4,7 +4,6 @@ import MenteeSidebar from './MenteeSidebar';
 import MenteeProfile from './MenteeProfile';
 import ProgramList from './ProgramList';
 import SessionHistory from './SessionHistory';
-import MentorSearch from './MentorSearch';
 import MentorSearchPage from './MentorSearchPage';
 import NotificationPage from './NotificationPage';
 
