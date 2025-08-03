@@ -56,9 +56,3 @@ CREATE TABLE IF NOT EXISTS mentees (
   profile_picture TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-  email TEXT UNIQUE NOT NULL,
-  bio TEXT,
-  interests TEXT,
-  profile_picture TEXT,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);

@@ -4,7 +4,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "setup": "node setup-database.js",
+    "reset-db": "rm -f database.sqlite && node setup-database.js"
   },
   "dependencies": {
     "axios": "^1.11.0",
