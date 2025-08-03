@@ -103,8 +103,8 @@ cd backend
 # Install dependencies
 npm install
 
-# Inisialisasi database
-node db-init.sql
+# Setup database dan data sample
+npm run setup
 ```
 
 ### 3. **Setup Frontend**
@@ -138,6 +138,21 @@ Aplikasi akan berjalan di: `http://localhost:5173`
 
 ### **Akses Aplikasi**
 Buka browser dan kunjungi: `http://localhost:5173`
+
+### **🔑 Akun Testing (Sudah Tersedia)**
+Setelah setup database, Anda dapat langsung login dengan akun berikut:
+
+**Mentee:**
+- Email: `mentee@example.com` 
+- Password: `password123`
+
+**Mentor:**  
+- Email: `mentor@example.com`
+- Password: `password123`
+
+**Demo Accounts:**
+- Demo Mentee: `demo.mentee@example.com` / `demo123`
+- Demo Mentor: `demo.mentor@example.com` / `demo123`
 
 ### **Untuk Akses dari HP/Device Lain:**
 
@@ -237,29 +252,44 @@ npx serve -s dist -p 3000
 
 ## 🐛 Troubleshooting
 
+### **Problem: Database error saat setup**
+**Solution**: 
+```bash
+cd backend
+npm run reset-db  # Reset dan setup ulang database
+```
+
+### **Problem: "Module not found" error**
+**Solution**: 
+```bash
+# Install ulang dependencies
+cd backend && npm install
+cd ../frontend && npm install
+```
+
 ### **Problem: Backend tidak bisa diakses dari HP**
 **Solution**: Pastikan port forwarding sudah disetup dengan visibility `Public`
 
 ### **Problem: CORS Error**
 **Solution**: Cek konfigurasi CORS di `backend/app.js`
 
-### **Problem: Database error**
-**Solution**: Jalankan ulang `node db-init.sql` di folder backend
-
-### **Problem: Frontend blank/putih**
+### **Problem: Dashboard stuck "Memuat..."**
 **Solution**: 
-1. Cek console browser untuk error
-2. Pastikan backend berjalan di port 5175
-3. Cek network tab untuk failed API calls
+1. Cek apakah backend berjalan di port 5175
+2. Test API dengan: `curl http://localhost:5175/api/mentors`
+3. Cek console browser untuk error
 
 ### **Problem: Port sudah digunakan**
 ```bash
-# Kill process di port 5175
+# Kill process di port 5175 (backend)
 lsof -ti:5175 | xargs kill
 
-# Kill process di port 5173
+# Kill process di port 5173 (frontend)  
 lsof -ti:5173 | xargs kill
 ```
+
+### **Problem: Login gagal**
+**Solution**: Pastikan menggunakan email dan password yang benar dari akun testing
 
 ## 👥 Tim Pengembang
 
