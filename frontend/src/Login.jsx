@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SimpleNavbar from './SimpleNavbar';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -42,39 +43,42 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white p-8 rounded shadow">
-        <h2 className="text-2xl font-bold mb-6 text-center">Masuk</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              placeholder="anda@contoh.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 mb-2">Kata Sandi</label>
-            <input
-              type="password"
-              id="password"
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              placeholder="********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          {error && <p className="text-red-500 mb-4">{error}</p>}
-          <button type="submit" className="w-full bg-primary text-white py-2 rounded hover:bg-blue-600">Masuk</button>
-        </form>
+    <>
+      <SimpleNavbar />
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-16">
+        <div className="max-w-md w-full bg-white p-8 rounded shadow">
+          <h2 className="text-2xl font-bold mb-6 text-center">Masuk</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="anda@contoh.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-6">
+              <label htmlFor="password" className="block text-gray-700 mb-2">Kata Sandi</label>
+              <input
+                type="password"
+                id="password"
+                className="w-full border border-gray-300 rounded px-3 py-2"
+                placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            {error && <p className="text-red-500 mb-4">{error}</p>}
+            <button type="submit" className="w-full bg-primary text-white py-2 rounded hover:bg-blue-600">Masuk</button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

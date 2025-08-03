@@ -32,7 +32,12 @@ function MenteeDashboard() {
     
     setIsValidAccess(true);
     fetch(`http://localhost:5175/api/mentee-dashboard?email=${email}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then(result => {
         setData(result);
         // Extract skills from completed sessions if we have session data
@@ -49,6 +54,10 @@ function MenteeDashboard() {
         if (result.mentee?.id) {
           fetchLearningProgress(result.mentee.id);
         }
+      })
+      .catch(error => {
+        console.error('Error fetching mentee dashboard data:', error);
+        setData({ error: error.message, mentee: { name: 'Error User' }, stats: {}, sessions: [] });
       });
   }, []);
 

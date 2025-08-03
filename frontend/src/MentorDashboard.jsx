@@ -29,8 +29,19 @@ function MentorDashboard() {
     
     setIsValidAccess(true);
     fetch(`http://localhost:5175/api/mentor-dashboard?email=${email}`)
-      .then(res => res.json())
-      .then(setData);
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then(result => {
+        setData(result);
+      })
+      .catch(error => {
+        console.error('Error fetching mentor dashboard data:', error);
+        setData({ error: error.message, mentor: { name: 'Error User' }, stats: {}, sessions: [] });
+      });
   }, []);
 
   useEffect(() => {

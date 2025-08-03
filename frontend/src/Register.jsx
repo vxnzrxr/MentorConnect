@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SimpleNavbar from './SimpleNavbar';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -58,8 +59,10 @@ function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white p-8 rounded shadow">
+    <>
+      <SimpleNavbar />
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-16">
+        <div className="max-w-md w-full bg-white p-8 rounded shadow">
         <h2 className="text-2xl font-bold mb-6 text-center">Daftar</h2>
         {message && <p className="mb-4 text-green-600">{message}</p>}
         {error && <p className="mb-4 text-red-600">{error}</p>}
@@ -129,6 +132,7 @@ function Register() {
         </form>
       </div>
     </div>
+    </>
   );
 }
 
